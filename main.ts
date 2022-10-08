@@ -13,4 +13,4 @@ bluetooth.onUartDataReceived(serial.delimiters(Delimiters.Hash), function () {
 })
 let cmd = ""
 basic.showIcon(IconNames.House)
-music.playMelody("G C5 C5 - C5 G A B ", 115)
+music.playSoundEffect(music.builtinSoundEffect(soundExpression.hello), SoundExpressionPlayMode.UntilDone)
