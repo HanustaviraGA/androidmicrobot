@@ -1,9 +1,11 @@
 bluetooth.onBluetoothConnected(function () {
+    serial.writeString("Starting UART")
     basic.showIcon(IconNames.Yes)
     bluetooth.startUartService()
 })
 bluetooth.onBluetoothDisconnected(function () {
     basic.showIcon(IconNames.No)
+    serial.writeString("UART Disabled")
 })
 bluetooth.onUartDataReceived(serial.delimiters(Delimiters.Hash), function () {
     cmd = bluetooth.uartReadUntil(serial.delimiters(Delimiters.Hash))
